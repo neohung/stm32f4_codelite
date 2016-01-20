@@ -1,0 +1,1 @@
+openocd  -f board/stm32f4discovery.cfg  -c "init" -c "reset halt" -c "flash protect 0 0 11 off" -c "flash write_image erase build/stm32f4_usb_cdc.elf" -c "reset run" -c "exit"

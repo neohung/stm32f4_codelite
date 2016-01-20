@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="usbcdc" InternalType="">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00010001N0005Debug000000000000]]>
+    </Plugin>
+    <Plugin Name="CMakePlugin">
+      <![CDATA[[{
+  "name": "Debug",
+  "enabled": false,
+  "buildDirectory": "build",
+  "sourceDirectory": "$(ProjectPath)",
+  "generator": "",
+  "buildType": "",
+  "arguments": [],
+  "parentProject": ""
+ }]]]>
+    </Plugin>
+  </Plugins>
+  <VirtualDirectory Name="lib">
+    <VirtualDirectory Name="USB_OTG">
+      <VirtualDirectory Name="inc">
+        <File Name="lib/USB_OTG/inc/usb_bsp.h"/>
+        <File Name="lib/USB_OTG/inc/usb_conf_template.h"/>
+        <File Name="lib/USB_OTG/inc/usb_core.h"/>
+        <File Name="lib/USB_OTG/inc/usb_dcd.h"/>
+        <File Name="lib/USB_OTG/inc/usb_dcd_int.h"/>
+        <File Name="lib/USB_OTG/inc/usb_defines.h"/>
+        <File Name="lib/USB_OTG/inc/usb_hcd.h"/>
+        <File Name="lib/USB_OTG/inc/usb_hcd_int.h"/>
+        <File Name="lib/USB_OTG/inc/usb_otg.h"/>
+        <File Name="lib/USB_OTG/inc/usb_regs.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="src">
+        <File Name="lib/USB_OTG/src/usb_bsp_template.c"/>
+        <File Name="lib/USB_OTG/src/usb_core.c"/>
+        <File Name="lib/USB_OTG/src/usb_dcd.c"/>
+        <File Name="lib/USB_OTG/src/usb_dcd_int.c"/>
+        <File Name="lib/USB_OTG/src/usb_hcd.c"/>
+        <File Name="lib/USB_OTG/src/usb_hcd_int.c"/>
+        <File Name="lib/USB_OTG/src/usb_otg.c"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="USB_Host">
+      <VirtualDirectory Name="Core">
+        <VirtualDirectory Name="inc">
+          <File Name="lib/USB_Host/Core/inc/usbh_conf_template.h"/>
+          <File Name="lib/USB_Host/Core/inc/usbh_core.h"/>
+          <File Name="lib/USB_Host/Core/inc/usbh_def.h"/>
+          <File Name="lib/USB_Host/Core/inc/usbh_hcs.h"/>
+          <File Name="lib/USB_Host/Core/inc/usbh_ioreq.h"/>
+          <File Name="lib/USB_Host/Core/inc/usbh_stdreq.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="src">
+          <File Name="lib/USB_Host/Core/src/usbh_core.c"/>
+          <File Name="lib/USB_Host/Core/src/usbh_hcs.c"/>
+          <File Name="lib/USB_Host/Core/src/usbh_ioreq.c"/>
+          <File Name="lib/USB_Host/Core/src/usbh_stdreq.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="Class">
+        <VirtualDirectory Name="MSC">
+          <VirtualDirectory Name="inc">
+            <File Name="lib/USB_Host/Class/MSC/inc/usbh_msc_bot.h"/>
+            <File Name="lib/USB_Host/Class/MSC/inc/usbh_msc_core.h"/>
+            <File Name="lib/USB_Host/Class/MSC/inc/usbh_msc_scsi.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="src">
+            <File Name="lib/USB_Host/Class/MSC/src/usbh_msc_bot.c"/>
+            <File Name="lib/USB_Host/Class/MSC/src/usbh_msc_core.c"/>
+            <File Name="lib/USB_Host/Class/MSC/src/usbh_msc_fatfs.c"/>
+            <File Name="lib/USB_Host/Class/MSC/src/usbh_msc_scsi.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="HID">
+          <VirtualDirectory Name="inc">
+            <File Name="lib/USB_Host/Class/HID/inc/usbh_hid_core.h"/>
+            <File Name="lib/USB_Host/Class/HID/inc/usbh_hid_keybd.h"/>
+            <File Name="lib/USB_Host/Class/HID/inc/usbh_hid_mouse.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="src">
+            <File Name="lib/USB_Host/Class/HID/src/usbh_hid_core.c"/>
+            <File Name="lib/USB_Host/Class/HID/src/usbh_hid_keybd.c"/>
+            <File Name="lib/USB_Host/Class/HID/src/usbh_hid_mouse.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="USB_Device">
+      <VirtualDirectory Name="Core">
+        <VirtualDirectory Name="inc">
+          <File Name="lib/USB_Device/Core/inc/usbd_conf_template.h"/>
+          <File Name="lib/USB_Device/Core/inc/usbd_core.h"/>
+          <File Name="lib/USB_Device/Core/inc/usbd_def.h"/>
+          <File Name="lib/USB_Device/Core/inc/usbd_ioreq.h"/>
+          <File Name="lib/USB_Device/Core/inc/usbd_req.h"/>
+          <File Name="lib/USB_Device/Core/inc/usbd_usr.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="src">
+          <File Name="lib/USB_Device/Core/src/usbd_core.c"/>
+          <File Name="lib/USB_Device/Core/src/usbd_ioreq.c"/>
+          <File Name="lib/USB_Device/Core/src/usbd_req.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="Class">
+        <VirtualDirectory Name="msc">
+          <VirtualDirectory Name="inc">
+            <File Name="lib/USB_Device/Class/msc/inc/usbd_msc_bot.h"/>
+            <File Name="lib/USB_Device/Class/msc/inc/usbd_msc_core.h"/>
+            <File Name="lib/USB_Device/Class/msc/inc/usbd_msc_data.h"/>
+            <File Name="lib/USB_Device/Class/msc/inc/usbd_msc_mem.h"/>
+            <File Name="lib/USB_Device/Class/msc/inc/usbd_msc_scsi.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="src">
+            <File Name="lib/USB_Device/Class/msc/src/usbd_msc_bot.c"/>
+            <File Name="lib/USB_Device/Class/msc/src/usbd_msc_core.c"/>
+            <File Name="lib/USB_Device/Class/msc/src/usbd_msc_data.c"/>
+            <File Name="lib/USB_Device/Class/msc/src/usbd_msc_scsi.c"/>
+            <File Name="lib/USB_Device/Class/msc/src/usbd_storage_template.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="hid">
+          <VirtualDirectory Name="inc">
+            <File Name="lib/USB_Device/Class/hid/inc/usbd_hid_core.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="src">
+            <File Name="lib/USB_Device/Class/hid/src/usbd_hid_core.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="dfu">
+          <VirtualDirectory Name="inc">
+            <File Name="lib/USB_Device/Class/dfu/inc/usbd_dfu_core.h"/>
+            <File Name="lib/USB_Device/Class/dfu/inc/usbd_dfu_mal.h"/>
+            <File Name="lib/USB_Device/Class/dfu/inc/usbd_flash_if.h"/>
+            <File Name="lib/USB_Device/Class/dfu/inc/usbd_mem_if_template.h"/>
+            <File Name="lib/USB_Device/Class/dfu/inc/usbd_otp_if.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="src">
+            <File Name="lib/USB_Device/Class/dfu/src/usbd_dfu_core.c"/>
+            <File Name="lib/USB_Device/Class/dfu/src/usbd_dfu_mal.c"/>
+            <File Name="lib/USB_Device/Class/dfu/src/usbd_flash_if.c"/>
+            <File Name="lib/USB_Device/Class/dfu/src/usbd_mem_if_template.c"/>
+            <File Name="lib/USB_Device/Class/dfu/src/usbd_otp_if.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="cdc">
+          <VirtualDirectory Name="inc">
+            <File Name="lib/USB_Device/Class/cdc/inc/usbd_cdc_core.h"/>
+            <File Name="lib/USB_Device/Class/cdc/inc/usbd_cdc_if_template.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="src">
+            <File Name="lib/USB_Device/Class/cdc/src/usbd_cdc_core.c"/>
+            <File Name="lib/USB_Device/Class/cdc/src/usbd_cdc_if_template.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="audio">
+          <VirtualDirectory Name="inc">
+            <File Name="lib/USB_Device/Class/audio/inc/usbd_audio_core.h"/>
+            <File Name="lib/USB_Device/Class/audio/inc/usbd_audio_out_if.h"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="src">
+            <File Name="lib/USB_Device/Class/audio/src/usbd_audio_core.c"/>
+            <File Name="lib/USB_Device/Class/audio/src/usbd_audio_out_if.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="StdPeriph">
+      <VirtualDirectory Name="inc">
+        <File Name="lib/StdPeriph/inc/misc.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_adc.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_can.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_crc.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_cryp.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_dac.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_dbgmcu.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_dcmi.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_dma.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_exti.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_flash.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_fsmc.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_gpio.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_hash.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_i2c.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_iwdg.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_pwr.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_rcc.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_rng.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_rtc.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_sdio.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_spi.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_syscfg.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_tim.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_usart.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_wwdg.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="src">
+        <File Name="lib/StdPeriph/src/misc.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_adc.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_can.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_crc.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_cryp.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_cryp_aes.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_cryp_des.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_cryp_tdes.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_dac.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_dbgmcu.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_dcmi.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_dma.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_exti.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_flash.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_fsmc.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_gpio.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_hash.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_hash_md5.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_hash_sha1.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_i2c.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_iwdg.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_pwr.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_rcc.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_rng.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_rtc.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_sdio.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_spi.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_syscfg.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_tim.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_usart.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_wwdg.c"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="fat_fs">
+      <VirtualDirectory Name="src">
+        <VirtualDirectory Name="option">
+          <File Name="lib/fat_fs/src/option/ccsbcs.c"/>
+          <File Name="lib/fat_fs/src/option/syncobj.c"/>
+        </VirtualDirectory>
+        <File Name="lib/fat_fs/src/diskio.c"/>
+        <File Name="lib/fat_fs/src/fattime.c"/>
+        <File Name="lib/fat_fs/src/ff.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="inc">
+        <File Name="lib/fat_fs/inc/diskio.h"/>
+        <File Name="lib/fat_fs/inc/fattime.h"/>
+        <File Name="lib/fat_fs/inc/ff.h"/>
+        <File Name="lib/fat_fs/inc/integer.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Core">
+      <VirtualDirectory Name="cmsis">
+        <File Name="lib/Core/cmsis/arm_common_tables.h"/>
+        <File Name="lib/Core/cmsis/arm_math.h"/>
+        <File Name="lib/Core/cmsis/core_cm0.h"/>
+        <File Name="lib/Core/cmsis/core_cm3.h"/>
+        <File Name="lib/Core/cmsis/core_cm4.h"/>
+        <File Name="lib/Core/cmsis/core_cm4_simd.h"/>
+        <File Name="lib/Core/cmsis/core_cmFunc.h"/>
+        <File Name="lib/Core/cmsis/core_cmInstr.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="stm32">
+        <File Name="lib/Core/stm32/stm32f4xx.h"/>
+        <File Name="lib/Core/stm32/stm32f4xx_conf_template.h"/>
+        <File Name="lib/Core/stm32/system_stm32f4xx.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Conf">
+      <File Name="lib/Conf/ffconf.h"/>
+      <File Name="lib/Conf/usbd_conf.h"/>
+      <File Name="lib/Conf/usbd_desc.h"/>
+      <File Name="lib/Conf/usbh_conf.h"/>
+      <File Name="lib/Conf/usb_conf.h"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="inc">
+    <File Name="inc/main.h"/>
+    <File Name="inc/stm32f4xx_conf.h"/>
+    <File Name="inc/stm32f4xx_it.h"/>
+    <File Name="inc/usbd_cdc_vcp.h"/>
+    <File Name="inc/usbd_conf.h"/>
+    <File Name="inc/usb_conf.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="src">
+    <File Name="src/main.c"/>
+    <File Name="src/stm32f4xx_it.c"/>
+    <File Name="src/syscalls.c"/>
+    <File Name="src/system_stm32f4xx.c"/>
+    <File Name="src/usbd_cdc_vcp.c"/>
+    <File Name="src/usbd_desc.c"/>
+    <File Name="src/usbd_usr.c"/>
+    <File Name="src/usb_bsp.c"/>
+  </VirtualDirectory>
+  <Settings Type="Dynamic Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="Cross GCC ( arm-none-eabi )" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g" C_Options="-g" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="" IntermediateDirectory="./Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <Target Name="Flash">flash.bat</Target>
+        <Target Name="Erase">erase.bat</Target>
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>$(ProjectPath)</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="Cross GCC ( arm-none-eabi )" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="" C_Options="" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="-O2" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="" IntermediateDirectory="./Release" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>$(WorkspacePath)</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
+</CodeLite_Project>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="neo_usb" InternalType="">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00010001N0005Debug000000000000]]>
+    </Plugin>
+    <Plugin Name="CMakePlugin">
+      <![CDATA[[{
+  "name": "Debug",
+  "enabled": false,
+  "buildDirectory": "build",
+  "sourceDirectory": "$(ProjectPath)",
+  "generator": "",
+  "buildType": "",
+  "arguments": [],
+  "parentProject": ""
+ }]]]>
+    </Plugin>
+  </Plugins>
+  <VirtualDirectory Name="tmp">
+    <VirtualDirectory Name="cmsis">
+      <File Name="tmp/cmsis/arm_common_tables.h"/>
+      <File Name="tmp/cmsis/arm_math.h"/>
+      <File Name="tmp/cmsis/core_cm0.h"/>
+      <File Name="tmp/cmsis/core_cm3.h"/>
+      <File Name="tmp/cmsis/core_cm4.h"/>
+      <File Name="tmp/cmsis/core_cm4_simd.h"/>
+      <File Name="tmp/cmsis/core_cmFunc.h"/>
+      <File Name="tmp/cmsis/core_cmInstr.h"/>
+    </VirtualDirectory>
+    <File Name="tmp/main.h"/>
+    <File Name="tmp/stm32f4xx_conf.h"/>
+    <File Name="tmp/stm32f4xx_conf_template.h"/>
+    <File Name="tmp/syscalls.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="startup">
+    <VirtualDirectory Name="cmsis">
+      <File Name="startup/cmsis/core_cm4.h"/>
+      <File Name="startup/cmsis/core_cm4_simd.h"/>
+      <File Name="startup/cmsis/core_cmFunc.h"/>
+      <File Name="startup/cmsis/core_cmInstr.h"/>
+    </VirtualDirectory>
+    <File Name="startup/stm32f4xx.h"/>
+    <File Name="startup/system_stm32f4xx.c"/>
+    <File Name="startup/system_stm32f4xx.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="lib">
+    <VirtualDirectory Name="StdPeriph">
+      <VirtualDirectory Name="inc">
+        <File Name="lib/StdPeriph/inc/misc.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_adc.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_can.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_crc.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_cryp.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_dac.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_dbgmcu.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_dcmi.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_dma.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_exti.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_flash.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_fsmc.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_gpio.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_hash.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_i2c.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_iwdg.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_pwr.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_rcc.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_rng.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_rtc.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_sdio.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_spi.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_syscfg.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_tim.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_usart.h"/>
+        <File Name="lib/StdPeriph/inc/stm32f4xx_wwdg.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="src">
+        <File Name="lib/StdPeriph/src/misc.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_adc.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_can.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_crc.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_cryp.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_cryp_aes.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_cryp_des.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_cryp_tdes.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_dac.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_dbgmcu.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_dcmi.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_dma.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_exti.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_flash.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_fsmc.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_gpio.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_hash.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_hash_md5.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_hash_sha1.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_i2c.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_iwdg.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_pwr.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_rcc.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_rng.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_rtc.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_sdio.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_spi.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_syscfg.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_tim.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_usart.c"/>
+        <File Name="lib/StdPeriph/src/stm32f4xx_wwdg.c"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="src">
+    <File Name="src/main.c"/>
+  </VirtualDirectory>
+  <Settings Type="Executable">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="Cross GCC ( arm-none-eabi )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g" C_Options="-g" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="" IntermediateDirectory="./Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <Target Name="flash">flash.bat build\$(ProjectName).elf</Target>
+        <Target Name="erase">erase.bat</Target>
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>$(ProjectPath)</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="Cross GCC ( arm-none-eabi )" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="" C_Options="" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="-O2" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="" IntermediateDirectory="./Release" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>$(WorkspacePath)</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>

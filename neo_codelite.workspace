@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="neo_codelite" Database="">
+  <Project Name="usbcdc" Path="usbcdc/usbcdc.project" Active="Yes"/>
+  <Project Name="neo_usb" Path="neo_usb/neo_usb.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Project Name="usbcdc" ConfigName="Debug"/>
+      <Project Name="neo_usb" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="usbcdc" ConfigName="Release"/>
+      <Project Name="neo_usb" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
