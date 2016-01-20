@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="neo_codelite" Database="">
-  <Project Name="usbcdc" Path="usbcdc/usbcdc.project" Active="Yes"/>
-  <Project Name="neo_usb" Path="neo_usb/neo_usb.project" Active="No"/>
+  <Project Name="usbcdc" Path="usbcdc/usbcdc.project" Active="No"/>
+  <Project Name="neo_usb" Path="neo_usb/neo_usb.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Project Name="usbcdc" ConfigName="Debug"/>
