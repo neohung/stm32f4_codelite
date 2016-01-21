@@ -1,5 +1,6 @@
 //TEST
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <math.h>
@@ -72,43 +73,10 @@ void gpio_init(void)
 void printf_uart(char * string){
     while(*string){
         //ITM_SendChar(65);
-        USART_SendData (USART3, (unsigned short int ) * string ++);
+        USART_SendData(USART3, (unsigned short int ) *string++);
         while ( USART_GetFlagStatus(USART3 , USART_FLAG_TC) == RESET );
     }
 }
-
-void EnableUART()
-{
-   USART_InitTypeDef USART_InitStructure ;
-   GPIO_InitTypeDef GPIO_InitStructure ;
-   //Enable Clock GPIOC, USART3
-   RCC_AHB1PeriphClockCmd (RCC_AHB1Periph_GPIOC , ENABLE);
-   RCC_APB1PeriphClockCmd (RCC_APB1Periph_USART3 , ENABLE);
-   //PC10 ---> USART3_TX, PC11 ---> USART3_RX
-   GPIO_PinAFConfig (GPIOC , GPIO_PinSource10, GPIO_AF_USART3 );
-   GPIO_PinAFConfig(GPIOC , GPIO_PinSource11, GPIO_AF_USART3);
-   //Init GPIO 10,11 as AF
-   GPIO_InitStructure .GPIO_OType = GPIO_OType_PP; //
-   GPIO_InitStructure .GPIO_PuPd = GPIO_PuPd_UP; //
-   GPIO_InitStructure .GPIO_Mode = GPIO_Mode_AF; // ³ ] ©w ¬° AF, AF¤S ³ Q³ ] ¦¨¤FGPIO_AF_USART3
-   GPIO_InitStructure .GPIO_Pin = GPIO_Pin_10; //³ ]PC10
-   GPIO_InitStructure .GPIO_Speed = GPIO_Speed_50MHz; //50 MHz
-   GPIO_Init(GPIOC , & GPIO_InitStructure);
-   GPIO_InitStructure .GPIO_Mode = GPIO_Mode_AF;
-   GPIO_InitStructure .GPIO_Pin = GPIO_Pin_11; //³ ]PC10
-   GPIO_Init(GPIOC , & GPIO_InitStructure);
-   //Init USART
-   USART_InitStructure .USART_BaudRate = 115200;
-   USART_InitStructure .USART_WordLength = USART_WordLength_8b;
-   USART_InitStructure .USART_StopBits = USART_StopBits_1; //
-   USART_InitStructure .USART_Parity = USART_Parity_No; //
-   USART_InitStructure .USART_HardwareFlowControl = USART_HardwareFlowControl_None; //
-   USART_InitStructure .USART_Mode = USART_Mode_Rx | USART_Mode_Tx ;  //
-   USART_Init(USART3 , & USART_InitStructure); //
-   //Enable USART3 
-     USART_Cmd (USART3 , ENABLE);
-}
-
 
 static volatile int USER_BTN;
 void EXTI0_IRQHandler(void)
@@ -165,25 +133,108 @@ static void EXTILine0_Config(void )
 }
 
 
+void EnableUART()
+{
+   USART_InitTypeDef USART_InitStructure ;
+   GPIO_InitTypeDef GPIO_InitStructure ;
+   USART_ClockInitTypeDef USART_ClockInitstructure;
+    NVIC_InitTypeDef NVIC_InitStructure;
+    
+ //Enable Clock GPIOC, USART3
+   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC , ENABLE); 
+   RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3 , ENABLE);
+   //PC10 ---> USART3_TX, PC11 ---> USART3_RX
+   GPIO_PinAFConfig (GPIOC, GPIO_PinSource10, GPIO_AF_USART3 );
+   GPIO_PinAFConfig(GPIOC , GPIO_PinSource11, GPIO_AF_USART3);
+   //Init GPIO 10,11 as AF
+   GPIO_InitStructure .GPIO_OType = GPIO_OType_PP; //
+   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP; //
+   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF; // 3 ]cw ?¢XAF, AF?S3 Q3] |¡L?FGPIO_AF_USART3
+   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 | GPIO_Pin_11; //3 ]PC10
+   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; //50 MHz
+   GPIO_Init(GPIOC , & GPIO_InitStructure);
+   //GPIO_InitStructure .GPIO_Mode = GPIO_Mode_AF;
+   //GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11; //3 ]PC10
+   //GPIO_Init(GPIOC , & GPIO_InitStructure);
+   //Init USART
+   USART_InitStructure .USART_BaudRate = 115200;
+   USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+   USART_InitStructure.USART_StopBits = USART_StopBits_1; //
+   USART_InitStructure.USART_Parity = USART_Parity_No; //
+   USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None; //
+   USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;  //
+   USART_Init(USART3 , & USART_InitStructure); // 
+   //clock settings
+    USART_ClockInitstructure.USART_Clock   = USART_Clock_Disable ;
+    USART_ClockInitstructure.USART_CPOL    = USART_CPOL_High ;
+    USART_ClockInitstructure.USART_LastBit = USART_LastBit_Disable;
+    USART_ClockInitstructure.USART_CPHA    = USART_CPHA_1Edge;
+    USART_ClockInit(USART3, &USART_ClockInitstructure);
+	 // interrupt configuration 
+    USART_ITConfig(USART3, USART_IT_RXNE, ENABLE); // enable the USART3 receive interrupt
+    NVIC_InitStructure.NVIC_IRQChannel = USART3_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);                           
+    //Enable USART3  
+     USART_Cmd(USART3 , ENABLE);
+}
+
+void USART3_IRQHandler(void)
+{
+    // RXNE handler
+    if(USART_GetITStatus(USART3, USART_IT_RXNE) != RESET)
+    {
+		char ch = USART_ReceiveData(USART3);
+		if (ch == 13) {
+			USART_SendData(USART3, '\n');
+			//USART_FLAG_TC?
+			while(USART_GetFlagStatus(USART3, USART_FLAG_TXE) == RESET);
+			USART_SendData(USART3, '\r');
+			while(USART_GetFlagStatus(USART3, USART_FLAG_TXE) == RESET);
+		}else{
+            USART_SendData(USART3, ch);
+			while(USART_GetFlagStatus(USART3, USART_FLAG_TXE) == RESET);
+		}
+    }
+}  
+//For USBD_DEVICE
+#include "usbd_cdc_core.h"
+//USR_cb
+#include "usbd_usr.h"
+#include "usbd_desc.h"
+#include "usbd_cdc_vcp.h" 
+
+#include <usbd_core.h>
+
 int main(void) {
 	EnableSystemCoreClock();
 	gpio_init();
 	//Init USER Button
 	EXTILine0_Config();
 	EnableUART();
+	char tmp[64];
+	sprintf(tmp,"%s\r\n",__TIME__);
+	printf_uart(tmp);
+	printf_uart("STM32F4 Start\r\n");
 	//<<<<<<<<<<<<<<<<<<<<<<<<
-	/*USBD_Init(&USB_OTG_dev,
+	__ALIGN_BEGIN USB_OTG_CORE_HANDLE  USB_OTG_dev __ALIGN_END;
+	
+	USBD_Init(&USB_OTG_dev,
 	            USB_OTG_FS_CORE_ID,
 	            &USR_desc,
 	            &USBD_CDC_cb,
-	            &USR_cb);*/
-	/*
+	            &USR_cb);
+	
+	 
+/* 
 	USBD_Init(NULL,
 	            0,
 	            NULL,
 	            NULL,
 	            NULL);
-	*/
+*/
 	//>>>>>>>>>>>>>>>>>>>>>>>>
 	/*
 	 * Disable STDOUT buffering. Otherwise nothing will be printed

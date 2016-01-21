@@ -1,0 +1,3 @@
+arm-none-eabi-gcc -std=gnu99 -g -O2 -Wall -T../startup/stm32_flash.ld -mlittle-endian -mthumb -mthumb-interwork -nostartfiles -mcpu=cortex-m4 -fsingle-precision-constant -Wdouble-promotion -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -I../lib/USB_Device/Core/inc -I../lib/USB_OTG/inc -I../inc -I../startup -I../startup/cmsis -I../lib/StdPeriph/inc -lm test.c ../startup/system_stm32f4xx.c ../startup/startup_stm32f4xx.s ../src/usb_bsp.c   -o test.elf -L../lib/USB_OTG -L../lib/USB_Device/Core -L../lib/USB_Device/Class/cdc -L../lib/StdPeriph -lstdperiph -lm -lusbdevcore -lusbdevcdc -lusbcore
+
+pause

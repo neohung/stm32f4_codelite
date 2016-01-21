@@ -17,6 +17,15 @@
  }]]]>
     </Plugin>
   </Plugins>
+  <Reconciliation>
+    <Regexes/>
+    <Excludepaths/>
+    <Ignorefiles/>
+    <Extensions>
+      <![CDATA[cpp;c;h;hpp;xrc;wxcp;fbp]]>
+    </Extensions>
+    <Topleveldir>../neo_usb</Topleveldir>
+  </Reconciliation>
   <VirtualDirectory Name="tmp">
     <VirtualDirectory Name="cmsis">
       <File Name="tmp/cmsis/arm_common_tables.h"/>
@@ -32,6 +41,7 @@
     <File Name="tmp/stm32f4xx_conf.h"/>
     <File Name="tmp/stm32f4xx_conf_template.h"/>
     <File Name="tmp/syscalls.c"/>
+    <File Name="tmp/test.c"/>
   </VirtualDirectory>
   <VirtualDirectory Name="startup">
     <VirtualDirectory Name="cmsis">
@@ -284,6 +294,11 @@
   <Dependencies/>
   <VirtualDirectory Name="src">
     <File Name="src/main.c"/>
+    <File Name="src/main_led_uart_test.c"/>
+    <File Name="src/usb_bsp.c"/>
+    <File Name="src/usbd_cdc_vcp.c"/>
+    <File Name="src/usbd_desc.c"/>
+    <File Name="src/usbd_usr.c"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
@@ -374,4 +389,10 @@
       </Completion>
     </Configuration>
   </Settings>
+  <VirtualDirectory Name="inc">
+    <File Name="inc/usb_conf.h"/>
+    <File Name="inc/usbd_conf.h"/>
+    <File Name="inc/usbd_desc.h"/>
+    <File Name="inc/usbd_cdc_vcp.h"/>
+  </VirtualDirectory>
 </CodeLite_Project>

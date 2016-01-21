@@ -9,7 +9,7 @@ SRCS = main.c
 
 # USB
 #SRCS += usbd_usr.c usbd_cdc_vcp.c usbd_desc.c usb_bsp.c
-
+SRCS += usb_bsp.c usbd_usr.c usbd_desc.c usbd_cdc_vcp.c
 ###################################################
 
 # Check for valid float argument
@@ -57,7 +57,8 @@ LIBPATHS += -Llib/USB_Device/Class/cdc -Llib/USB_OTG
 
 # Libraries to link
 #LIBS = -lm -lstdperiph -lusbdevcore -lusbdevcdc -lusbcore
-LIBS = -lm -lstdperiph -lusbcore
+#Add --specs=rdimon.specs for sprintf function
+LIBS = -lstdperiph -lm -lusbdevcore -lusbcore -lusbdevcdc --specs=rdimon.specs
 
 # Extra includes
 CFLAGS += -Ilib/StdPeriph/inc

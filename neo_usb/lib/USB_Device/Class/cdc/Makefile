@@ -33,6 +33,10 @@ CFLAGS += -ffreestanding -nostdlib
 CFLAGS += -Iinc -I../../../Core/cmsis -I../../../Core/stm32
 CFLAGS += -I../../../Conf -I../../../USB_OTG/inc
 CFLAGS += -I../../Core/inc
+#For stm32f4xx.h
+CFLAGS += -I../../../../startup
+#For core_cm4.h
+CFLAGS += -I../../../../startup/cmsis
 
 # Sources
 SRCS = usbd_cdc_core.c
